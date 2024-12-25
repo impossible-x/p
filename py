@@ -302,31 +302,15 @@ PROGRAM 12
 
 Program 12:
 
-Using a numpy module create an array and check the following
 
-1. Type of array
-
-3. Shape of array
-
-2. Axes of array
-
-4. Type of elements in array.
-
-import numpy as np.
-
+import numpy as np
 
 arr np.array([1, 2, 3, 4, 5])
+print("type of array:",type(arr))
+print("axes of array:", np.ndim(arr))
+print("shape of array:",arr.shape)
+print("type of element  in array:",arr.dtype)
 
-
-Output:
-
-Type of array: <class 'numpy.ndarray'>
-
-Axes of array: 1
-
-Shape of array: (5,)
-
-Type of elements in array: int32
 
 
 =======================================================================================================================================================================================================\\\\\\
@@ -334,36 +318,26 @@ Type of elements in array: int32
 
 PROGRAM 13
 
-
-Program 13: Write a python program to concatenate the dataframes with two different objects.
-
 import pandas as pd
 
-df1= pd.DataFrame({'Name': ['Snigdha', 'Smayan', 'Satvik'],
 
-'age': [20,19,18],
+df1 = pd.DataFrame({'Name': ['Snigdha', 'Smayan', 'Satvik'],
+                    'age': [20, 19, 18], 
+                    'grade': ['A', 'C', 'A']}, index=[1, 2, 3])
 
-'grade': ['A', 'C', 'A']},
 
-index=[1,2,3])
+df2 = pd.DataFrame({'Name': ['Mary', 'Nirmala', 'Shantala'],
+                    'age': [23, 30, 28], 
+                    'grade': ['B', 'C', 'A']}, index=[4, 5, 6])
 
-Create a second DataFrame df2
 
-df2 pd.DataFrame({'Name': ['Mary', 'Nirmala', 'Shantala'],
+result = pd.concat([df1, df2])
 
-'age': [23,30,28],
-
-'grade': ['B', 'C', 'A']),
-
-index=[4,5,6])
-
-Concatenate the two DataFrames into a single DataFrame
-
-pd.concat([df1, df2]) result
-
-Display the concatenated DataFrame
 
 print(result)
+
+
+
 
 =============================================================================================================================================================================================================\\\
 
